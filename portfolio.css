@@ -25,8 +25,8 @@ body{
 }
 
 .back {
-	transform: translateZ(30vmin) rotateY(180deg);
-  visibility: hidden;
+	transform: translateZ(90vmin) rotateY(180deg);
+  display: none;
 }
 .right {
 	transform: rotateY(270deg) translateX(90vmin);

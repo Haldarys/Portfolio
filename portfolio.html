@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        function resize_window(){
+          var largeur_fenetre = $(window).width();
+          var hauteur_fenetre = $(window).height();
+          console.log("largeur :" + largeur_fenetre + " / hauteur :" + hauteur_fenetre)
+          $("body").width(largeur_fenetre);
+          $("body").height(hauteur_fenetre);
+
+          var pers = $(".perspective");
+          var top = (hauteur_fenetre/2) - (hauteur_fenetre>largeur_fenetre ? largeur_fenetre/2.5 : hauteur_fenetre/2.5);
+          var left = (largeur_fenetre/2) - (pers.width()/2);
+          pers.css({top: top, left: left});
+        }
+
+        $(window).resize(resize_window);
+        resize_window();
+      });
+    </script>
+    <script type="text/javascript" src="anim_cube.js"></script>
+  </head>
+  <body>
+    <div class="perspective">
+      <div class="cube">
+        <div class="front">Hey je suis front <br/> <button>CLIQUE</button></div>
+        <div class="back">Salut je suis back</div>
+        <div class="bottom">Bonjour je suis bottom</div>
+        <div class="top">Tu m'as trouvé ! Je suis top</div>
+        <div class="left">Soir', c'est moi left</div>
+        <div class="right">Hello i'm right</div>
+      </div>
+    </div>
+
+  </body>
+</html>
